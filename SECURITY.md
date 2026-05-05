@@ -1,5 +1,4 @@
 # Security Policy
-# Security Policy
 
 ## Supported Versions
 
@@ -14,8 +13,9 @@ The following table lists the versions of this project currently supported with 
 
 ## Reporting a Vulnerability
 
-To report a security vulnerability, please email [security@example.com](mailto:security@example.com) with details.  
+To report a security vulnerability, please email [doster.lenovo@outlook.com](mailto:doster.lenovo@outlook.com) with details.  
 We aim to respond within 3 business days.  
 If the vulnerability is confirmed, we will coordinate a fix and disclosure timeline with you.
 
 Thank you for helping keep this project secure.
+
