@@ -10,6 +10,9 @@ static class Program
     private static readonly string[] Monsters = { "Goblin", "Skeleton", "Orc", "Cave Spider", "Dark Knight", "Troll" };
     private static readonly string[] FightFleeOptions = { "fight", "flee" };
 
+    // High Score system
+    private static int HighScore = 0;
+
     private enum Difficulty
     {
         Easy,
@@ -49,6 +52,10 @@ static class Program
     {
         DisplayTitle();
         WriteLineColor(ConsoleColor.Yellow, "Welcome to the dungeon. Survive the encounters, collect treasure, and escape alive.");
+        if (HighScore > 0)
+        {
+            WriteLineColor(ConsoleColor.Green, $"Current High Score: {HighScore}");
+        }
         Console.WriteLine();
     }
 
@@ -143,10 +150,17 @@ static class Program
     {
         Console.WriteLine("=== Adventure Complete ===");
 
+        int score = gold + health * 2 + (hasMagicWeapon ? 10 : 0);
+        if (score > HighScore)
+        {
+            HighScore = score;
+            WriteLineColor(ConsoleColor.Yellow, "New High Score!");
+        }
+
         if (health > 0)
         {
             Console.WriteLine("You escaped the dungeon! Your bravery is rewarded.");
-            Console.WriteLine($"Final score: {gold + health * 2 + (hasMagicWeapon ? 10 : 0)}");
+            Console.WriteLine($"Final score: {score}");
             Console.WriteLine($"Ending health: {health}");
             Console.WriteLine($"Total gold: {gold}");
             Console.WriteLine($"Weapon status: {(hasMagicWeapon ? "Enchanted" : "Basic")}");
@@ -156,6 +170,8 @@ static class Program
             Console.WriteLine("Your adventure ends here. Try again to beat the dungeon.");
             Console.WriteLine($"Gold collected: {gold}");
         }
+
+        WriteLineColor(ConsoleColor.Cyan, $"High Score: {HighScore}");
     }
 
     private static int FindTreasure(Difficulty difficulty)

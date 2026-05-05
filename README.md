@@ -9,6 +9,7 @@ Dungeon Escape is a polished console-based dungeon adventure game. Venture into 
 - Multiple difficulty levels: Easy, Normal, Hard
 - Colorful and styled console output
 - Replayable with different outcomes each run
+- **High Score system:** Your highest score is tracked and displayed
 
 ## Getting Started
 
@@ -21,4 +22,8 @@ Dungeon Escape is a polished console-based dungeon adventure game. Venture into 
 1. Clone or download this repository.
 2. Open a terminal in the project directory.
 3. Build the project:
+
+4. Run the game:
+
+   
    
